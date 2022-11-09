@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:crystal_memories/screens/premium_screen.dart';
 import 'package:crystal_memories/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,21 +23,30 @@ void main() async {
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) => MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        routerDelegate: _router.routerDelegate,
-        routeInformationParser: _router.routeInformationParser,
-        routeInformationProvider: _router.routeInformationProvider,
-      );
   final GoRouter _router = GoRouter(
     routes: [
       GoRoute(
-        routes: [],
         path: '/',
         builder: (BuildContext context, GoRouterState state) =>
-            const LevelScreen(),
+            const MainScreen(),
+        routes: [
+          GoRoute(
+            path: 'level_screen',
+            builder: (BuildContext context, GoRouterState state) =>
+                const LevelScreen(),
+          ),
+        ],
       ),
     ],
   );
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerDelegate: _router.routerDelegate,
+      routeInformationParser: _router.routeInformationParser,
+      routeInformationProvider: _router.routeInformationProvider,
+    );
+  }
 }

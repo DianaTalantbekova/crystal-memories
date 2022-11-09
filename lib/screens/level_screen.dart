@@ -27,47 +27,68 @@ class LevelScreen extends StatelessWidget {
       ),
     );
   }
-}
 
-Widget _buildBody() {
-  return Column(
-    children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(
-            width: 32.w,
-            height: 30.h,
-            child: Image.asset(
-              'assets/png/icons/arrow_back.png',
-              fit: BoxFit.cover,
+  Widget _buildBody() {
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.only(
+            left: 16.w,
+            right: 10.w,
+          ),
+          child: SizedBox(
+            height: 56.h,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 32.w,
+                  height: 30.h,
+                  child: Image.asset(
+                    'assets/png/icons/arrow_back.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                const Coins(coins: 12345),
+              ],
             ),
           ),
-          const Coins(coins: 12345),
-        ],
-      ),
-      SizedBox(height: 28.h),
-      Text(
-        'L e v e l S'.toUpperCase(),
-        style: TextStyleHelper.helper6,
-      ),
-      SizedBox(height: 128.h),
-      Expanded(
-        child: GridView.builder(
-          itemCount: 9,
-          padding: EdgeInsets.symmetric(horizontal: 52.w),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            crossAxisSpacing: 17.r,
-            mainAxisSpacing: 18.r,
-            // childAspectRatio: 103 / 131,
-          ),
-          itemBuilder: (context, index) {
-            return const LevelButton(asset: 'assets/png/levels/lvl1.png');
-          },
         ),
-      ),
-      LevelButton(asset: 'assets/png/levels/lvl10.png')
-    ],
-  );
+        SizedBox(height: 16.h),
+        Text(
+          'L e v e l S'.toUpperCase(),
+          style: TextStyleHelper.helper6,
+        ),
+        SizedBox(height: 128.h),
+        SizedBox(
+          height: 272.r,
+          child: GridView.builder(
+            itemCount: 9,
+            padding: EdgeInsets.symmetric(horizontal: 52.w),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              crossAxisSpacing: 16.r,
+              mainAxisSpacing: 16.r,
+            ),
+            itemBuilder: (context, index) {
+              return LevelButton(
+                asset: 'assets/png/levels/lvl${index + 1}.png',
+                enabled: 0 < index,
+                onTap: () => _onTap(index),
+              );
+            },
+          ),
+        ),
+        SizedBox(height: 16.r),
+        LevelButton(
+          asset: 'assets/png/levels/lvl10.png',
+          enabled: true,
+          onTap: () => _onTap(9),
+        ),
+      ],
+    );
+  }
+
+  void _onTap(int index) {}
 }

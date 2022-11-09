@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainButton extends StatelessWidget {
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final String text;
   final TextStyle textStyle;
+
   const MainButton({
     super.key,
-    required this.onTap,
+    this.onTap,
     required this.text,
     required this.textStyle,
   });
@@ -30,7 +31,7 @@ class MainButton extends StatelessWidget {
             Positioned.fill(
               child: Image.asset(
                 'assets/png/wave_effect.png',
-                fit: BoxFit.fitWidth,
+                fit: BoxFit.contain,
               ),
             ),
             Center(
@@ -39,6 +40,17 @@ class MainButton extends StatelessWidget {
                 style: textStyle,
               ),
             ),
+            Positioned.fill(
+              child: Visibility(
+                visible: onTap == null,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(32.r),
+                    color: Colors.black.withOpacity(0.4),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),

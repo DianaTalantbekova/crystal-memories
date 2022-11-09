@@ -48,6 +48,7 @@ class TextStyleHelper {
     fontWeight: FontWeight.w700,
     fontSize: 32.sp,
     height: 38 / 32,
+    letterSpacing: 5.sp,
     color: ThemeHelper.white,
   );
 

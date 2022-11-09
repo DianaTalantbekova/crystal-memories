@@ -35,24 +35,25 @@ Widget _buildBody() {
       children: [
         Image.asset(
           'assets/png/girl2.png',
-          width: 349.r,
+          width: 349.w,
           height: 262.h,
+          fit: BoxFit.cover,
         ),
         MainButton(
           onTap: () {},
-          text: 'p l a y'.toUpperCase(),
+          text: 'PLAY',
           textStyle: TextStyleHelper.helper6,
         ),
         SizedBox(height: 29.h),
         MainButton(
           onTap: () {},
-          text: 'S h o p'.toUpperCase(),
+          text: 'SHOP',
           textStyle: TextStyleHelper.helper6,
         ),
         SizedBox(height: 29.h),
         MainButton(
           onTap: () {},
-          text: 'S e t t i n g s'.toUpperCase(),
+          text: 'SETTINGS',
           textStyle: TextStyleHelper.helper6,
         ),
       ],
