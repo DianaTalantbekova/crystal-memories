@@ -3,7 +3,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:crystal_memories/commons/text_style_helper.dart';
 import 'package:crystal_memories/commons/theme_helper.dart';
 import 'package:crystal_memories/widgets/app_bar_widget.dart';
-import 'package:crystal_memories/widgets/hint_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -54,40 +53,51 @@ class ShopScreen extends StatelessWidget {
         ),
         SizedBox(height: 193.h),
         CarouselSlider.builder(
-          options: CarouselOptions(height: 251.h),
+          options: CarouselOptions(
+            height: 251.h,
+            viewportFraction: 0.9146,
+          ),
           itemCount: 5,
           itemBuilder:
-              (BuildContext context, int itemIndex, int pageViewIndex) =>
-                  Container(
-            width: 327.w,
-            decoration: BoxDecoration(
-              color: ThemeHelper.purple.withOpacity(0.69),
-              borderRadius: BorderRadius.circular(24.r),
-              border: Border.all(
-                width: 2.r,
-                color: ThemeHelper.white,
-              ),
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: 32.w,
-                  height: 32.h,
-                  child: Image.asset(
-                    'assets/png/icons/hint_icon.png',
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                SizedBox(width: 16.w),
-                Text('Hint', style: TextStyleHelper.helper9),
-                SizedBox(width: 160.w),
-                Text('X16', style: TextStyleHelper.helper10),
-              ],
-            ),
-          ),
+              (BuildContext context, int itemIndex, int pageViewIndex) {
+            return _carouselItem();
+          },
         )
       ],
+    );
+  }
+
+  Widget _carouselItem() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 4.w),
+      child: Container(
+        // width: 327.w,
+        decoration: BoxDecoration(
+          color: ThemeHelper.purple.withOpacity(0.69),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(
+            width: 2.r,
+            color: ThemeHelper.white,
+          ),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 32.w,
+              height: 32.h,
+              child: Image.asset(
+                'assets/png/icons/hint_icon.png',
+                fit: BoxFit.contain,
+              ),
+            ),
+            SizedBox(width: 16.w),
+            Text('Hint', style: TextStyleHelper.helper9),
+            SizedBox(width: 160.w),
+            Text('X16', style: TextStyleHelper.helper10),
+          ],
+        ),
+      ),
     );
   }
 }
