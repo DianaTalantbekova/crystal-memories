@@ -83,4 +83,11 @@ class TextStyleHelper {
     height: 20 / 20,
     color: ThemeHelper.white,
   );
+    static TextStyle helper11 = TextStyle(
+    fontFamily: 'Inter',
+    fontWeight: FontWeight.w400,
+    fontSize: 16.sp,
+    height: 16 / 19,
+    color: ThemeHelper.white,
+  );
 }

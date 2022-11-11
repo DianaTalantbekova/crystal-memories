@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:crystal_memories/commons/text_style_helper.dart';
 import 'package:crystal_memories/commons/theme_helper.dart';
 import 'package:crystal_memories/widgets/app_bar_widget.dart';
+import 'package:crystal_memories/widgets/main_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -56,48 +57,94 @@ class ShopScreen extends StatelessWidget {
           options: CarouselOptions(
             height: 251.h,
             viewportFraction: 0.9146,
+            enableInfiniteScroll: false,
+            onPageChanged: _onPageChanged,
           ),
           itemCount: 5,
           itemBuilder:
               (BuildContext context, int itemIndex, int pageViewIndex) {
-            return _carouselItem();
+
+            return _carouselItem(selected: itemIndex == 0);
+            
           },
-        )
+        ),
       ],
     );
   }
 
-  Widget _carouselItem() {
+  Widget _carouselItem({required bool selected}) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 4.w),
       child: Container(
-        // width: 327.w,
         decoration: BoxDecoration(
           color: ThemeHelper.purple.withOpacity(0.69),
           borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(
-            width: 2.r,
-            color: ThemeHelper.white,
-          ),
+          border: selected
+              ? Border.all(
+                  width: 2.r,
+                  color: ThemeHelper.white,
+                )
+              : null,
         ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: 32.w,
-              height: 32.h,
-              child: Image.asset(
-                'assets/png/icons/hint_icon.png',
-                fit: BoxFit.contain,
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 16.w,
+            vertical: 16.h,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: 32.w,
+                    height: 32.h,
+                    child: Image.asset(
+                      'assets/png/icons/hint_icon.png',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  SizedBox(width: 16.w),
+                  Text('Hint', style: TextStyleHelper.helper9),
+                  const Spacer(),
+                  Text('X16', style: TextStyleHelper.helper10),
+                ],
               ),
-            ),
-            SizedBox(width: 16.w),
-            Text('Hint', style: TextStyleHelper.helper9),
-            SizedBox(width: 160.w),
-            Text('X16', style: TextStyleHelper.helper10),
-          ],
+              SizedBox(height: 8.h),
+              SizedBox(
+                width: 247.w,
+                height: 123.h,
+                child: Text(
+                  'Additional display of combinations (that is, if you click during the game, the current combination will appear again (you can use it 1 time per level))',
+                  style: TextStyleHelper.helper11,
+                ),
+              ),
+              const Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    '2000',
+                    style:
+                        TextStyleHelper.helper4.copyWith(fontFamily: 'Inter'),
+                  ),
+                  SizedBox(width: 8.w),
+                  SizedBox(
+                    width: 24.w,
+                    height: 24.h,
+                    child: Image.asset('assets/png/icons/econ.png'),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  _onPageChanged(int index, CarouselPageChangedReason reason) {
+
   }
 }

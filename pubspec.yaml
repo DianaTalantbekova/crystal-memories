@@ -127,21 +127,5 @@ flutter:
           weight: 600
         - asset: assets/fonts/SF-Pro-Display-Thin.otf
           weight: 100
-    - family: InknutAntiqua
-      fonts:
-        - asset: assets/fonts/InknutAntiqua-Black.ttf
-          weight: 900
-        - asset: assets/fonts/InknutAntiqua-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/InknutAntiqua-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/InknutAntiqua-Light.ttf
-          weight: 300
-        - asset: assets/fonts/InknutAntiqua-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/InknutAntiqua-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/InknutAntiqua-SemiBold.ttf
-          weight: 600      
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
