@@ -39,7 +39,7 @@ class GameScreen extends StatelessWidget {
   }
 
   Widget _buildBody() {
-    final length = 7;
+    const length = 7;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

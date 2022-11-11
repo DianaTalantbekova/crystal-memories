@@ -1,13 +1,21 @@
 import 'dart:async';
-import 'package:crystal_memories/screens/game_screen.dart';
 import 'package:crystal_memories/screens/screens.dart';
 import 'package:crystal_memories/screens/shop_screen.dart';
+import 'package:crystal_memories/services/preference_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  PreferenceService().init();
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]);
 
   runZonedGuarded(
       () => runApp(
