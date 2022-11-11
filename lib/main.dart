@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:crystal_memories/screens/game_screen.dart';
 import 'package:crystal_memories/screens/screens.dart';
+import 'package:crystal_memories/screens/shop_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -28,14 +29,13 @@ class MyApp extends StatelessWidget {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) =>
-            const GameScreen(),
+            const ShopScreen(),
         routes: [
           GoRoute(
             path: 'level_screen',
             builder: (BuildContext context, GoRouterState state) =>
                 const LevelScreen(),
           ),
-         
         ],
       ),
     ],

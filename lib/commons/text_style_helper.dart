@@ -70,17 +70,17 @@ class TextStyleHelper {
 
   static TextStyle helper9 = TextStyle(
     fontFamily: 'Inter',
-    fontWeight: FontWeight.w600,
-    fontSize: 12.sp,
-    height: 15 / 12,
+    fontWeight: FontWeight.w700,
+    fontSize: 24.sp,
+    height: 29 / 24,
     color: ThemeHelper.white,
   );
 
   static TextStyle helper10 = TextStyle(
     fontFamily: 'Inter',
-    fontWeight: FontWeight.w500,
-    fontSize: 16.sp,
-    height: 20 / 16,
+    fontWeight: FontWeight.w700,
+    fontSize: 20.sp,
+    height: 20 / 20,
     color: ThemeHelper.white,
   );
 }
