@@ -13,5 +13,7 @@ class ThemeHelper {
 
   static const Color deepPurple = Color(0xFF46056D);
 
-//   static const Color black = Color(0xFF000000);
+  static const Color black = Color(0xFF000000);
+
+  static const Color pink = Color(0xFFFF1BE8);
 }

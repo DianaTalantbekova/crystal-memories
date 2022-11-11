@@ -63,8 +63,8 @@ class TextStyleHelper {
   static TextStyle helper8 = TextStyle(
     fontFamily: 'Inter',
     fontWeight: FontWeight.w700,
-    fontSize: 24.sp,
-    height: 29 / 24,
+    fontSize: 16.sp,
+    height: 19 / 16,
     color: ThemeHelper.white,
   );
 

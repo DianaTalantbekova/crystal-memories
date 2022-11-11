@@ -41,6 +41,7 @@ dependencies:
   flutter_bloc: ^8.1.1
   shared_preferences: ^2.0.15
   flutter_launcher_icons: ^0.10.0
+  bordered_text: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,11 @@ flutter:
     - assets/png/icons/
     - assets/png/background/
     - assets/png/levels/
+    - assets/png/packs/pack1/
+    - assets/png/packs/pack2/
+    - assets/png/packs/pack3/
+    - assets/png/packs/pack4/
+    - assets/png/packs/pack5/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

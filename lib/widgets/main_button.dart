@@ -31,7 +31,7 @@ class MainButton extends StatelessWidget {
             Positioned.fill(
               child: Image.asset(
                 'assets/png/wave_effect.png',
-                fit: BoxFit.contain,
+                fit: BoxFit.fitWidth,
               ),
             ),
             Center(

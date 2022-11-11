@@ -1,5 +1,7 @@
+import 'dart:ui';
+
 import 'package:crystal_memories/commons/text_style_helper.dart';
-import 'package:crystal_memories/widgets/coins.dart';
+import 'package:crystal_memories/widgets/app_bar_widget.dart';
 import 'package:crystal_memories/widgets/level_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,8 +15,17 @@ class LevelScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(
+                sigmaX: 2.5.r,
+                sigmaY: 2.5.r,
+              ),
+              child: Container(color: Colors.transparent),
+            ),
+          ),
+          Positioned.fill(
             child: Image.asset(
-              'assets/png/background/main_background_image.png',
+              'assets/png/background/bg_image.png',
               fit: BoxFit.cover,
             ),
           ),
@@ -38,26 +49,12 @@ class LevelScreen extends StatelessWidget {
           ),
           child: SizedBox(
             height: 56.h,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 32.w,
-                  height: 30.h,
-                  child: Image.asset(
-                    'assets/png/icons/arrow_back.png',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                const Coins(coins: 12345),
-              ],
-            ),
+            child: const AppBarWidget(),
           ),
         ),
         SizedBox(height: 16.h),
         Text(
-          'L e v e l S'.toUpperCase(),
+          'LEVELS',
           style: TextStyleHelper.helper6,
         ),
         SizedBox(height: 128.h),
