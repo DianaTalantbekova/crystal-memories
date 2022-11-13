@@ -87,7 +87,7 @@ class TextStyleHelper {
     fontFamily: 'Inter',
     fontWeight: FontWeight.w400,
     fontSize: 16.sp,
-    height: 16 / 19,
+    height: 19 / 16,
     color: ThemeHelper.white,
   );
 }
