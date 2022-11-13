@@ -1,6 +1,5 @@
 import 'dart:math';
-import 'dart:ui';
-import 'package:crystal_memories/commons/theme_helper.dart';
+import 'package:crystal_memories/widgets/background_widget.dart';
 import 'package:crystal_memories/widgets/hint_button.dart';
 import 'package:crystal_memories/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -11,31 +10,7 @@ class GameScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ThemeHelper.pink.withOpacity(0.01),
-      body: Stack(
-        children: [
-          Positioned.fill(
-            child: Image.asset(
-              'assets/png/background/bg_lvl3.png',
-              fit: BoxFit.cover,
-            ),
-          ),
-          Positioned.fill(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                sigmaX: 2.5.r,
-                sigmaY: 2.5.r,
-              ),
-              child: Container(color: Colors.transparent),
-            ),
-          ),
-          SafeArea(
-            child: _buildBody(),
-          ),
-        ],
-      ),
-    );
+    return BackgroundWidget(child: _buildBody());
   }
 
   Widget _buildBody() {

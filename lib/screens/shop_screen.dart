@@ -5,6 +5,7 @@ import 'package:crystal_memories/commons/theme_helper.dart';
 import 'package:crystal_memories/models/crystal_info.dart';
 import 'package:crystal_memories/utils/crystals.dart';
 import 'package:crystal_memories/widgets/app_bar_widget.dart';
+import 'package:crystal_memories/widgets/main_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -82,6 +83,11 @@ class _ShopScreenState extends State<ShopScreen> {
             );
           },
         ),
+        SizedBox(height: 118.h),
+        MainButton(
+          text: 'BUY',
+          textStyle: TextStyleHelper.helper6,
+        )
       ],
     );
   }

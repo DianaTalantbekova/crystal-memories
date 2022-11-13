@@ -90,4 +90,18 @@ class TextStyleHelper {
     height: 19 / 16,
     color: ThemeHelper.white,
   );
+   static TextStyle helper12 = TextStyle(
+    fontFamily: 'SF_Pro',
+    fontWeight: FontWeight.w600,
+    fontSize: 17.sp,
+    height: 22 / 17,
+    color: ThemeHelper.black,
+  );
+   static TextStyle helper13 = TextStyle(
+    fontFamily: 'SF_Pro',
+    fontWeight: FontWeight.w400,
+    fontSize: 13.sp,
+    height: 16 / 13,
+    color: ThemeHelper.black,
+  );
 }

@@ -77,8 +77,8 @@ Widget _buildBody() {
 
 Widget _buildInfo() {
   return Container(
-    width: 327.r,
-    height: 251.r,
+    width: 327.w,
+    height: 251.h,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(24.r),
       color: ThemeHelper.gray.withOpacity(0.59),
